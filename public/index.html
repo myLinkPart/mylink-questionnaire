@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+    <title></title>
+    <script>
+       window.__loadAssetsList = function (type, list, callback) {
+          callback = callback || function(){};
+          var loaded = 0;
+          var loadCallcack = function() {
+              loaded++;
+              if (loaded >= list.length) {
+                  callback();
+              } else {
+                  loadNext();
+              }
+          };
+          var loadNext = function() {
+              if (type === 'script') {
+                  window.__loadScript(list[loaded], loadCallcack);
+              } else if (type === 'css') {
+                  window.__loadCss(list[loaded], loadCallcack);
+              } else {
+                  loadNext();
+              }
+          };
+          loadNext();
+      };
+      window.__loadScript = function(src, callback) {
+          callback = callback || function(){};
+          var s = document.createElement('script');
+          s.async = false;
+          s.src = src;
+          s.addEventListener('load', function() {
+              s.removeEventListener('load', arguments.callee, false);
+              callback();
+          }, false);
+          document.head.appendChild(s);
+      };
+      window.__loadCss = function(url, callback) {
+          callback = callback || function(){};
+          var link = document.createElement('link');
+          link.rel = "stylesheet";
+          link.type = "text/css";
+          link.href = url;
+          link.addEventListener('load', function () {
+              link.removeEventListener('load', arguments.callee, false);
+              callback();
+          }, false);
+          document.head.appendChild(link);
+      };
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?e76aea215487544b904b9a0ebb1a1d30";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script type="text/javascript" charset="UTF-8" src="//res.cdn.openinstall.io/openinstall.js"></script>
+    <noscript>jscss2jsonplugin inject js</noscript>
+  </body>
+</html>

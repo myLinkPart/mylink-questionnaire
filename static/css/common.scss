@@ -1,0 +1,37 @@
+// 变量
+$scale: 1rem / 200px;
+
+.center_box {
+    max-width: 750px;
+    min-height: 98vh;
+    background: #b08dff;
+    position: relative;
+    padding-bottom: 2vh;
+    margin: 0 auto;
+}
+
+.banner {
+    width: 100%;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: -128px * $scale;
+        right: 0;
+    }
+}
+
+.box_ {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.btn {
+    display: flex;
+    .van-button {
+        width: 100%;
+        color: #ffffff;
+        background: linear-gradient(180deg, #fe8072, #fa568c);
+        border: none;
+    }
+}
