@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Satisfaction from "@views/satisfaction.vue";
+import Satisfaction from "@views/satisfaction/index.vue";
 import Preference from "@views/preference.vue";
 
 

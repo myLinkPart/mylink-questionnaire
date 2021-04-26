@@ -100,6 +100,7 @@ export default {
   methods: {
     selectQ2() {
       this.Q2More = [];
+      this.custom = '';
       this.$emit('selectQ2', this.Q2);
     },
     selectSub() {
@@ -115,21 +116,27 @@ export default {
     margin-top: 40px * $scale;
     text-align: center;
     border-bottom: 0;
-    border-top: 1px dotted;
+    border-top: 1px dashed rgba(106, 67, 209, .7);
+    padding-top: 60px * $scale;
   }
   .q-other {
     font-size: 28px * $scale;
   }
   .van-checkbox{
-    margin: 20px * $scale 0 20px * $scale 20px * $scale;
+    margin: 30px * $scale 0 30px * $scale 65px * $scale;
   }
   .van-field {
     padding: 0;
     /deep/.van-field__label {
       width: auto;
+      color: #333;
+      font-size: 24px * $scale;
     }
     /deep/.van-field__body {
       border-bottom: 1px solid;
+    }
+    /deep/.van-field__control {
+      color: #6A43D1;
     }
   }
 }

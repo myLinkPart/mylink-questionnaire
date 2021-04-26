@@ -1,17 +1,33 @@
+.center_box {
+  max-width: 750px;
+  min-height: 85vh;
+  background: #FFF4FF;
+  position: relative;
+  padding-bottom: 15vh;
+  margin: 0 auto;
+}
+
+.middle_box {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -252px * $scale;
+}
+
 .q-title {
-  font-size: 28px * $scale;
+  padding-bottom: 26px * $scale;
+  font-size: 30px * $scale;
   font-weight: bold;
-  padding: 40px * $scale 0;
-  border-bottom: 1px dotted;
+  border-bottom: 1px dashed rgba(106, 67, 209, .7);
 }
 
 .q-tip {
   display: inline;
-  font-size: 22px * $scale;
-  padding: 10px * $scale 30px * $scale;
-  background: #6f38d4;
+  padding: 10px * $scale 20px * $scale;
+  font-size: 26px * $scale;
+  background: linear-gradient(#9f7cfc, #6a43d1);
   color: #fff;
   border-radius: 50px * $scale;
+  margin-right: 18px * $scale;
 }
 
 .q-sub-content {
@@ -21,16 +37,35 @@
     .van-radio{
       flex: 1;
       flex-direction: column-reverse;
+      margin-right: 12px * $scale;
       .van-radio__label {
         margin-left: 0;
         margin-bottom: 20px * $scale;
+        font-weight: 500;
+        line-height: normal;
       }
     }
   }
 }
 
 .q-content {
-  .van-radio__icon .van-icon {
+  .van-radio__icon .van-icon,
+  .van-checkbox__icon .van-icon {
     border: 1px solid #6f38d4;
+  }
+  .van-checkbox__label {
+    color: #333;
+    font-size: 24px * $scale;
+    line-height: normal;
+  }
+}
+
+.rule {
+  font-size: 22px * $scale;
+  padding: 20px * $scale 50px * $scale;
+  .title {
+    line-height: 58px * $scale;
+    font-size: 24px * $scale;
+    font-weight: bold;
   }
 }

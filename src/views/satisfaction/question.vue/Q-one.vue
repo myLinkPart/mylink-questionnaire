@@ -20,6 +20,11 @@
           {{item}}分
         </van-radio>
       </van-radio-group>
+      <div class="q-status">
+        <span v-for="(item, index) in radioTextArr" :key="index">
+          {{ item }}
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -40,7 +45,8 @@ export default {
   },
   data() {
     return {
-      Q1: ''
+      Q1: '',
+      radioTextArr: ['非常不满意', '不满意', '一般满意', '满意', '非常满意']
     }
   },
   methods: {
@@ -50,3 +56,18 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.Q-one {
+  .q-status {
+    display: flex;
+    font-size: 20px * $scale;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 20px * $scale;
+    span {
+      flex: 1;
+      text-align: center;
+      margin-right: 12px * $scale;
+    }
+  }
+}
+</style>
