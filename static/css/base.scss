@@ -2,9 +2,35 @@
   font-size: 28px * $scale;
   font-weight: bold;
   padding: 40px * $scale 0;
-  text-align: center;
   border-bottom: 1px dotted;
 }
+
+.q-tip {
+  display: inline;
+  font-size: 22px * $scale;
+  padding: 10px * $scale 30px * $scale;
+  background: #6f38d4;
+  color: #fff;
+  border-radius: 50px * $scale;
+}
+
 .q-sub-content {
   margin-top: 40px * $scale;
+  .van-radio-group.verRadio {
+    font-size: 28px * $scale;
+    .van-radio{
+      flex: 1;
+      flex-direction: column-reverse;
+      .van-radio__label {
+        margin-left: 0;
+        margin-bottom: 20px * $scale;
+      }
+    }
+  }
+}
+
+.q-content {
+  .van-radio__icon .van-icon {
+    border: 1px solid #6f38d4;
+  }
 }

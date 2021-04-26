@@ -1,8 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@views/home.vue";
-import CouponList from "@views/couponList.vue";
-import Popup from "@views/popup.vue";
+import Satisfaction from "@views/satisfaction.vue";
+import Preference from "@views/preference.vue";
 
 
 Vue.use(VueRouter);
@@ -10,8 +9,8 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: "/",
-        name: "Home",
-        component: Home,
+        name: "satisfaction",
+        component: Satisfaction,
         meta: {
             titleZh: "MyLink 问卷调查",
             titleEn: "MyLink Welcome Offers",
@@ -19,25 +18,15 @@ const routes = [
         },
     },
     {
-        path: "/couponList",
-        name: "couponList",
-        component: CouponList,
+        path: "/preference",
+        name: "preference",
+        component: Preference,
         meta: {
             titleZh: "MyLink 迎新礼遇",
             titleEn: "MyLink Welcome Offers",
             titleTw: "MyLink 迎新禮遇",
         },
     },
-    {
-        path: "/popup",
-        name: "popup",
-        component: Popup,
-        meta: {
-            titleZh: "MyLink 迎新礼遇",
-            titleEn: "MyLink Welcome Offers",
-            titleTw: "MyLink 迎新禮遇",
-        },
-    }
 ];
 
 

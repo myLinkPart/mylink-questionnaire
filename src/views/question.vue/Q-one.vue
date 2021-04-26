@@ -1,11 +1,13 @@
 <template>
   <div class="Q-one">
     <div class="q-title">
-      您是否满意Mylink体验？*
-    </div>
+      <div class="q-tip">Q1</div>
+        您是否满意Mylink体验？*
+      </div>
     <div class="q-sub-content">
       <van-radio-group
         v-model="Q1"
+        class="verRadio"
         direction="horizontal"
         checked-color="#6f38d4"
         @change="selectQ1"
@@ -38,7 +40,7 @@ export default {
   },
   data() {
     return {
-      Q1: 1
+      Q1: ''
     }
   },
   methods: {
@@ -48,20 +50,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.Q-one {
-  .van-radio-group {
-    font-size: 28px * $scale;
-    .van-radio {
-      flex: 1;
-      flex-direction: column-reverse;
-      /deep/.van-radio__label {
-        margin-left: 0;
-        margin-bottom: 20px * $scale;
-      }
-    }
-  }
-}
-
-</style>
