@@ -13,7 +13,7 @@ const routes = [
         name: "Home",
         component: Home,
         meta: {
-            titleZh: "MyLink 迎新礼遇",
+            titleZh: "MyLink 问卷调查",
             titleEn: "MyLink Welcome Offers",
             titleTw: "MyLink 迎新禮遇",
         },

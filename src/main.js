@@ -23,9 +23,7 @@ import VueClipboard from "vue-clipboard2"; // 复制到粘贴板插件
 VueClipboard.config.autoSetContainer = true;
 Vue.use(VueClipboard);
 
-import { Uploader } from 'vant';
 import 'vant/lib/index.css';
-Vue.use(Uploader);
 
 Vue.config.productionTip = false;
 
