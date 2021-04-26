@@ -1,9 +1,11 @@
 <template>
 <!-- 满意度调查 -->
   <div class="satisfaction">
-    <div class="center_box">
-      <Scontent />
-      <div class="bottom">
+    <Layout>
+      <img :src="$t('satisfaction.头部banner')" alt="" slot="banner">
+      <q-one slot="middle" v-if="active === 0" @selectQ1="selectQ1" />
+      <q-two slot="middle" v-if="active === 1" @selectQ2="selectQ2" @selectSub="selectSub" />
+      <div slot="bottom">
         <van-button
           round
           color="#6f38d4"
@@ -14,19 +16,23 @@
           {{statusText}}
         </van-button>
       </div>
-    </div>
+    </Layout>
   </div>
 </template>
 
 <script>
 import { Button } from 'vant';
-import Scontent from './content';
+import QOne from './question.vue/Q-one';
+import QTwo from './question.vue/Q-two';
+import Layout from '@c/layout.vue';
 
 export default {
   name: "Home",
   components: {
     vanButton: Button,
-    Scontent,
+    QOne,
+    QTwo,
+    Layout
   },
   data() {
     return {
@@ -73,6 +79,25 @@ export default {
 
 <style lang="scss" scoped>
 .satisfaction {
+  position: relative;
+  .q-content {
+    padding: 0 50px * $scale;
+    .q-require {
+      margin: 20px * $scale 0;
+      font-size: 18px * $scale;
+      color: red;
+      font-weight: bold;
+    }
+    .q-box {
+      position: relative;
+      background: #fff;
+      border-radius: 12px * $scale;
+      border: 1px solid rgba(241, 23, 231, 0.2);
+      .q-slot-content {
+        padding: 34px * $scale 20px * $scale;
+      }
+    }
+  }
   .bottom {
     position: fixed;
     bottom: 0;

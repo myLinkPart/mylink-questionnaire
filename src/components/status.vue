@@ -1,7 +1,8 @@
 <template>
   <div class="com-status">
     <div class="content">
-      <img :src="require('../../static/img/failure.png')" alt="" >
+      <img  v-if="status === 'fail'" :src="require('../../static/img/failure.png')" alt="" >
+      <img  v-if="status === 'success'" :src="require('../../static/img/failure.png')" alt="" >
       <p></p>
       <p></p>
     </div>
@@ -10,7 +11,19 @@
 
 <script>
 export default {
-  name: 'ComStatus'
+  name: 'ComStatus',
+  props: {
+    status: {
+      type: String,
+      default: 'fail'
+    }
+  },
+  data() {
+    return {
+
+    }
+  }
+
 }
 </script>
 

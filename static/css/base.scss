@@ -32,6 +32,9 @@
 
 .q-sub-content {
   margin-top: 40px * $scale;
+  .van-radio-group.horRadio {
+    font-size: 28px * $scale;
+  }
   .van-radio-group.verRadio {
     font-size: 28px * $scale;
     .van-radio{
