@@ -1,25 +1,30 @@
 <template>
   <div class="q-layout">
     <div class="center_box">
-      <div class="q-banner">
-        <slot name="banner"></slot>
-      </div>
-      <div class="middle_box">
-        <div class="q-content">
-          <div class="q-require">*必须填写</div>
-          <div class="q-box">
-            <div class="q-slot-content">
-              <slot name="middle"></slot>
+      <div v-if="showContent">
+        <div class="q-banner">
+          <slot name="banner"></slot>
+        </div>
+        <div class="middle_box">
+          <div class="q-content">
+            <div class="q-require">*必须填写</div>
+            <div class="q-box">
+              <div class="q-slot-content">
+                <slot name="middle"></slot>
+              </div>
             </div>
           </div>
+          <div class="rule">
+            <div class="title">條款及細則</div>
+            <p>1、广东建设规划分局工会党纪国法</p>
+            <p>1、广东建设规划分局工会党纪国法</p>
+            <p>1、广东建设规划分局工会党纪国法</p>
+            <p>1、广东建设规划分局工会党纪国法</p>
+          </div>
         </div>
-        <div class="rule">
-          <div class="title">條款及細則</div>
-          <p>1、广东建设规划分局工会党纪国法</p>
-          <p>1、广东建设规划分局工会党纪国法</p>
-          <p>1、广东建设规划分局工会党纪国法</p>
-          <p>1、广东建设规划分局工会党纪国法</p>
-        </div>
+      </div>
+      <div v-else>
+        <slot name="other"></slot>
       </div>
       <div class="bottom">
         <slot name="bottom"></slot>
@@ -31,7 +36,12 @@
 <script>
 export default {
   name: 'Qlayout',
-
+  props: {
+    showContent: {
+      type: Boolean,
+      default: true
+    }
+  }
 }
 </script>
 

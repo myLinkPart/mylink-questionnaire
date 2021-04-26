@@ -1,7 +1,7 @@
 <template>
 <!-- 满意度调查 -->
   <div class="satisfaction">
-    <Layout>
+    <Layout :showContent="!toResult">
       <img :src="$t('satisfaction.头部banner')" alt="" slot="banner">
       <q-one slot="middle" v-if="active === 0" @selectQ1="selectQ1" />
       <q-two slot="middle" v-if="active === 1" @selectQ2="selectQ2" @selectSub="selectSub" />
@@ -38,7 +38,8 @@ export default {
     return {
       active: 0,
       statusText: '下一步',
-      disabled: true
+      disabled: true,
+      toResult: false
     };
   },
   created() {},
@@ -69,7 +70,7 @@ export default {
         this.disabled = true;
         this.statusText = '提交';
       }else {
-        console.log('到提交页面');
+        this.toResult = true;
       }
       
     }

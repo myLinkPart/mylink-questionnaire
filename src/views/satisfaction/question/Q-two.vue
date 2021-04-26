@@ -118,6 +118,7 @@ export default {
     border-bottom: 0;
     border-top: 1px dashed rgba(106, 67, 209, .7);
     padding-top: 60px * $scale;
+    justify-content: center;
   }
   .q-other {
     font-size: 28px * $scale;

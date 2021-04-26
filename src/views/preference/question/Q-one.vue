@@ -2,8 +2,8 @@
   <div class="Q-one-p">
     <div class="q-title">
       <div class="q-tip">Q1</div>
-        請選擇用量進度條顯示更能讓你理解的（單選）*
-      </div>
+      <span>請選擇用量進度條顯示更能讓你理解的（單選）*</span>
+    </div>
     <div class="q-sub-content">
       <van-radio-group
         v-model="Q1"
@@ -17,6 +17,7 @@
           :name="item.value"
         >
           {{ item.name }}
+          <img :src="item.img" alt="">
         </van-radio>
       </van-radio-group>
     </div>
@@ -55,15 +56,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .Q-one-p {
-  .q-status {
-    display: flex;
-    font-size: 20px * $scale;
-    color: rgba(0, 0, 0, 0.4);
-    margin-top: 20px * $scale;
-    span {
-      flex: 1;
-      text-align: center;
-      margin-right: 12px * $scale;
+  .van-radio {
+    margin-bottom:40px * $scale;
+    align-items: end;
+    img {
+      margin-top: 20px * $scale;
     }
   }
 }

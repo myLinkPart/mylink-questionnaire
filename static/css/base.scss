@@ -18,6 +18,8 @@
   font-size: 30px * $scale;
   font-weight: bold;
   border-bottom: 1px dashed rgba(106, 67, 209, .7);
+  display: flex;
+  align-items: center;
 }
 
 .q-tip {
