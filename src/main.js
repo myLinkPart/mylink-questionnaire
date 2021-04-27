@@ -1,7 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import { getParam } from "@common/handle.js";
 import { get, post } from '@utils/fetch';
 Vue.prototype.$get = get;
 Vue.prototype.$post = post;
@@ -25,28 +24,6 @@ Vue.use(VueClipboard);
 import 'vant/lib/index.css';
 
 Vue.config.productionTip = false;
-
-router.beforeEach((to, from, next) => {
-    let lang = getParam("lang");
-    if (lang === 'sc' || lang === 'en' || lang === 'tc') {
-        sessionStorage.setItem("lang", lang);
-    }
-    switch (sessionStorage.getItem('lang')) {
-        case 'sc':
-            document.title = to.meta.titleZh;
-            i18n.locale = 'sc'
-            break;
-        case 'en':
-            document.title = to.meta.titleEn;
-            i18n.locale = 'en'
-            break;
-        case 'tc':
-            document.title = to.meta.titleTw;
-            i18n.locale = 'tc'
-            break;
-    }
-    next();
-});
 
 new Vue({
     router,

@@ -87,7 +87,7 @@ export function get(url, params = {}) {
             url: url,
             method: 'get',
             headers: {
-                Authorization: `Bear ${sessionStorage.getItem('question-jwt')}`,
+                Authorization: `Bear ${sessionStorage.getItem('jwt_questionnaire')}`,
             },
             params: {
                 ...params,

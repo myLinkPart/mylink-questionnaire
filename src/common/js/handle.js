@@ -26,55 +26,104 @@ export const system = () => {
 
 // 唤起mylink app，并跳到指定页面
 export const callMylinkApp = (url) => {
-    // if (system() === "android") { // 安卓
-    //     console.log('安卓点击打开app-page',url);
-    //     OpenApp(url);
-    // } else if (system() === "ios") { // ios
-        let oUrl = `openhkhshlogin://${url}`
-        let appUrl = `https://mylink.komect.com/mylink/#/l/?link=${encodeURIComponent(oUrl)}&umkey=`;
-        console.log('ios点击打开app-page', appUrl);
-        window.location.href = appUrl;
-    // }
+  let oUrl = `openhkhshlogin://${url}`
+  let appUrl = `https://mylink.komect.com/mylink/#/l/?link=${encodeURIComponent(oUrl)}&umkey=`;
+  console.log('ios点击打开app-page', appUrl);
+  window.location.href = appUrl;
 }
+
+// 是否在app内
+export const isApp = () => {
+  if (
+    window.HkAndroid ||
+    (window.webkit &&
+      window.webkit.messageHandlers &&
+      window.webkit.messageHandlers.getBossInfoWithCallback)
+  ) {
+    // 在app内
+    return true;
+  } else {
+    // 在app外
+    return false;
+  }
+};
+
+/**
+ * 获取App用户信息
+ */
+ export const getUserInfo = (callback) => {
+  if (
+    window.HkAndroid ||
+    (window.webkit &&
+      window.webkit.messageHandlers &&
+      window.webkit.messageHandlers.getBossInfoWithCallback)
+  ) {
+    // 在app内
+    try {
+      window.getUser = (obj) => {
+        callback(obj);
+      };
+      let params = {
+        callbackName: "getUser",
+        needLogin: true,
+      };
+      if (system() === "android") {
+        // 安卓
+        window.HkAndroid.getBossInfoWithCallback(JSON.stringify(params));
+      } else if (system() === "ios") {
+        // ios
+        window.webkit.messageHandlers.getBossInfoWithCallback.postMessage(
+          JSON.stringify(params)
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      callback();
+    }
+  } else {
+    // 在app外
+    callback();
+  }
+};
 
 // 分享
 export const shareFun = (obj) => {
-    obj.img = obj.img || 'http://cdn.via.cool/jtp-host/resource/activity/1622/2020-09-25/88adf6ddc877423ba931d110c9807a25.jpeg';
-    const name = system();
-    const isAndroid = name === "android"; // android终端
-    const isiOS = name === "ios"; // ios终端
+  obj.img = obj.img || 'http://cdn.via.cool/jtp-host/resource/activity/1622/2020-09-25/88adf6ddc877423ba931d110c9807a25.jpeg';
+  const name = system();
+  const isAndroid = name === "android"; // android终端
+  const isiOS = name === "ios"; // ios终端
 
-    let fun;
+  let fun;
 
-    // 分享
-    if (obj.type === 1) {
-        if (isAndroid) {
-            fun = "initShare";
-        }
+  // 分享
+  if (obj.type === 1) {
+      if (isAndroid) {
+          fun = "initShare";
+      }
 
-        if (isiOS) {
-            fun = "setShareButton";
-        }
-    }
+      if (isiOS) {
+          fun = "setShareButton";
+      }
+  }
 
-    // 紧急电话
-    if (obj.type === 2) {
-        fun = "setEmergencyButton";
-    }
-    obj = JSON.stringify(obj);
+  // 紧急电话
+  if (obj.type === 2) {
+    fun = "setEmergencyButton";
+  }
+  obj = JSON.stringify(obj);
 
-    if (isAndroid) {
-        // 调用原生的分享功能
-        window.HkAndroid && window.HkAndroid[fun](obj);
-    }
+  if (isAndroid) {
+    // 调用原生的分享功能
+    window.HkAndroid && window.HkAndroid[fun](obj);
+  }
 
-    if (isiOS) {
-        // 调用原生的分享功能
-        window.webkit &&
-            window.webkit.messageHandlers &&
-            window.webkit.messageHandlers[fun] &&
-            window.webkit.messageHandlers[fun].postMessage(obj);
-    }
+  if (isiOS) {
+    // 调用原生的分享功能
+    window.webkit &&
+        window.webkit.messageHandlers &&
+        window.webkit.messageHandlers[fun] &&
+        window.webkit.messageHandlers[fun].postMessage(obj);
+  }
 };
 
 
