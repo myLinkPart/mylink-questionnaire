@@ -3,7 +3,6 @@ import App from "./App.vue";
 import router from "./router";
 import { getParam } from "@common/handle.js";
 import { get, post } from '@utils/fetch';
-import '@utils/wx';
 Vue.prototype.$get = get;
 Vue.prototype.$post = post;
 
@@ -48,8 +47,6 @@ router.beforeEach((to, from, next) => {
     }
     next();
 });
-
-Vue.prototype.$wxsdk.getWxConfig();
 
 new Vue({
     router,

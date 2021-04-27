@@ -13,29 +13,30 @@
         @change="selectQ2"
       >
         <van-radio
-          v-for="item of radioArr"
-          :key="item.value"
-          :name="item.value"
+          v-for="(item, index) of radioArr"
+          :key="index"
+          :name="item.name"
         >{{item.name}}</van-radio>
       </van-radio-group>
       <div class="q-other" v-if="Q2">
-        <div class="q-title sub-title">{{ radioArr[+Q2-1].child.title }}</div>
+        <div class="q-title sub-title">{{ index.child.title }}</div>
         <van-checkbox-group
           v-model="Q2More"
           checked-color="#6f38d4"
           @change="selectSub"
         >
           <van-checkbox
-            v-for="item in radioArr[+Q2-1].child.questions"
-            :name="item.value"
-            :key="item.value"
-          >{{  item.name }}</van-checkbox>
+            v-for="(item, index) in index.child.questions"
+            :name="item"
+            :key="index"
+          >{{  item }}</van-checkbox>
           <van-checkbox name="input">
             <van-field
               v-model="custom"
               name="其他"
               label="其他"
               placeholder="请输入其他满意内容"
+              @change="changeOther"
             />
           </van-checkbox>
         </van-checkbox-group>
@@ -61,41 +62,34 @@ export default {
       Q2: '',
       Q2More: [],
       custom: '',
-      radioArr: [{
+      radioArr: [
+      {
         name: '界面设计',
-        value: 1,
         child: {
           title: '您最满意界面的内容（多选）*',
-          questions: [{
-            name: '界面设计清晰',
-            value: '1-1'
-          }, {
-            name: '界面设计够简洁',
-            value: '1-2'
-          }, {
-            name: '排榜整齐',
-            value: '1-3'
-          }, {
-            name: '很时尚',
-            value: '1-4'
-          }]
+          questions: ['界面设计清晰','界面设计够简洁','排榜整齐', '很时尚']
         }
-      }, {
+      },
+      {
         name: '用户体验',
-        value: 2,
         child: {
           title: '您最满意体验的内容（多选）*', 
           questions: []
         }
-      }, {
+      },
+      {
         name: '栏目功能',
-        value: 3,
         child: {
           title: '您最满意栏目的内容（多选）*',
           questions: []
         }
       }],
     };
+  },
+  computed: {
+    index() {
+      return this.radioArr.find(item => item.name === this.Q2);
+    }
   },
   methods: {
     selectQ2() {
@@ -105,6 +99,9 @@ export default {
     },
     selectSub() {
       this.$emit('selectSub', this.Q2More)
+    },
+    changeOther() {
+      this.$emit('changeOther', this.custom)
     }
   }
 }

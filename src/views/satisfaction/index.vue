@@ -4,7 +4,13 @@
     <Layout :showContent="!toResult">
       <img :src="$t('satisfaction.头部banner')" alt="" slot="banner">
       <q-one slot="middle" v-if="active === 0" @selectQ1="selectQ1" />
-      <q-two slot="middle" v-if="active === 1" @selectQ2="selectQ2" @selectSub="selectSub" />
+      <q-two
+        slot="middle" 
+        v-if="active === 1"
+        @selectQ2="selectQ2"
+        @selectSub="selectSub"
+        @changeOther="changeOther"
+      />
       <com-status slot="other" />
       <div slot="bottom">
         <van-button
@@ -42,7 +48,13 @@ export default {
       active: 0,
       statusText: '下一步',
       disabled: true,
-      toResult: false
+      toResult: false,
+      submitParam: {
+        content: "", // 多选内容
+        other: "", // 其他内容
+        score: 0, // 满意度
+        type: "" // 类别：界面、体验、功能
+      }
     };
   },
   created() {},
@@ -51,22 +63,26 @@ export default {
   methods: {
     // 题目一
     selectQ1(val) {
-      console.log('题目1', val);
+      this.submitParam.score = val;
       this.disabled = false;
     },
     // 题目二
     selectQ2(val) {
-      console.log('题目2', val);
+      this.submitParam.type = val;
     },
+    // 多选
     selectSub(val){
-      console.log('题目2多选项', val);
       if(val.length) {
+        this.submitParam.content = val.filter(item => item !== 'input').join(',');
         this.disabled = false;
       } else {
         this.disabled = true;
       }
     },
-    // 下一步/提交
+    changeOther(val) {
+      this.submitParam.other = val;
+    },
+    // 下一步
     next() {
       if(this.active < 1) {
         this.active++;
@@ -74,8 +90,12 @@ export default {
         this.statusText = '提交';
       }else {
         this.toResult = true;
-      }
-      
+        this.submit();
+      } 
+    },
+    // 提交
+    submit() {
+      console.log('提交内容', this.submitParam);
     }
   },
 };
@@ -83,25 +103,6 @@ export default {
 
 <style lang="scss" scoped>
 .satisfaction {
-  position: relative;
-  .q-content {
-    padding: 0 50px * $scale;
-    .q-require {
-      margin: 20px * $scale 0;
-      font-size: 18px * $scale;
-      color: red;
-      font-weight: bold;
-    }
-    .q-box {
-      position: relative;
-      background: #fff;
-      border-radius: 12px * $scale;
-      border: 1px solid rgba(241, 23, 231, 0.2);
-      .q-slot-content {
-        padding: 34px * $scale 20px * $scale;
-      }
-    }
-  }
   .bottom {
     position: fixed;
     bottom: 0;

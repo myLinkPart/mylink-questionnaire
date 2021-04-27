@@ -11,8 +11,6 @@ const httpService = axios.create({
 // request拦截器
 httpService.interceptors.request.use(
     config => {
-        // config.headers['Authorization'] = `Bearer ${JSON.parse(localStorage.getItem('userInfo')).authorization}`;
-        // config.headers['Accept-Language'] = localStorage.lang || 'zh-CN';
         return config;
     },
     error => {
@@ -89,7 +87,7 @@ export function get(url, params = {}) {
             url: url,
             method: 'get',
             headers: {
-                Authorization: `Bear ${sessionStorage.getItem('jwt')}`,
+                Authorization: `Bear ${sessionStorage.getItem('question-jwt')}`,
             },
             params: {
                 ...params,
@@ -123,47 +121,11 @@ export function post(url, params = {}, headers = {}) {
         });
     });
 }
-
-/*
- *  文件上传
- *  url:请求地址
- *  params:参数
- * */
-export function fileUpload(url, params = {}) {
-    return new Promise((resolve, reject) => {
-        httpService({
-            url: url,
-            method: 'post',
-            data: params,
-            timeout: 0,
-            headers: { 'Content-Type': 'multipart/form-data', Authorization: `Bear ${sessionStorage.getItem('jwt')}`, }
-        }).then(response => {
-            resolve(response);
-        }).catch(error => {
-            reject(error);
-        });
-    });
-}
-
-/**
- * 第三方cdn图片上传
- */
-
-export function outerUpload (data = {}) {
-    let url = 'https://mylink.komect.com/pafs/rest/uploadservices/uploadbynewimagetype'
-    return axios.post(url, data)
-    .then(response => {
-        return response.data
-    }).catch(error => {
-        Promise.reject(error);
-    });
-}
+ 
 
 export const baseURL = httpService.defaults.baseURL
 
 export default {
     get,
     post,
-    fileUpload,
-    outerUpload,
 }
