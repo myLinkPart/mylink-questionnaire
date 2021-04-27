@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div v-else>
+      <div class="other" v-else>
         <slot name="other"></slot>
       </div>
       <div class="bottom">

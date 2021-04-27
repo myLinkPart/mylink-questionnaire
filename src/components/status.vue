@@ -1,10 +1,12 @@
 <template>
   <div class="com-status">
     <div class="content">
-      <img  v-if="status === 'fail'" :src="require('../../static/img/failure.png')" alt="" >
-      <img  v-if="status === 'success'" :src="require('../../static/img/failure.png')" alt="" >
-      <p></p>
-      <p></p>
+      <div class="img">
+        <img v-if="status === 'fail'" :src="require('../../static/img/failure.png')" alt="" >
+        <img v-if="status === 'success'" :src="require('../../static/img/success.png')" alt="" >
+      </div>
+      <p class="title">{{ status === 'fail'? '提交失败!': '提交成功' }}</p>
+      <p class="sub">{{ msg }}</p>
     </div>
   </div>
 </template>
@@ -15,7 +17,11 @@ export default {
   props: {
     status: {
       type: String,
-      default: 'fail'
+      default: 'success'
+    },
+    msg: {
+      type: String,
+      default: '絡網延遲或不可預期的錯誤，請返回重試。'
     }
   },
   data() {
@@ -28,5 +34,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.com-status {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img{
+    width: 68px * $scale;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  .title {
+    font-size: 28px * $scale;
+    text-align: center;
+    font-size: 24px * $scale;
+    margin: 47px * $scale 0 10px * $scale 0;
+  }
+  .sub {
+    font-size: 24px * $scale;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 12px * $scale;
+  }
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <!-- 偏好问卷 -->
   <div class="preference">
-    <Layout>
+    <Layout :showContent="!toResult">
       <img :src="$t('preference.头部banner')" alt="" slot="banner">
       <q-one slot="middle" />
       <div slot="bottom">
@@ -29,7 +29,8 @@ export default {
   data() {
     return {
       statusText: '提交',
-      disabled: false
+      disabled: false,
+      toResult: false
     };
   },
   components: {

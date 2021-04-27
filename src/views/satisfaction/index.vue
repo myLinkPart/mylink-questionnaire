@@ -5,6 +5,7 @@
       <img :src="$t('satisfaction.头部banner')" alt="" slot="banner">
       <q-one slot="middle" v-if="active === 0" @selectQ1="selectQ1" />
       <q-two slot="middle" v-if="active === 1" @selectQ2="selectQ2" @selectSub="selectSub" />
+      <com-status slot="other" />
       <div slot="bottom">
         <van-button
           round
@@ -22,9 +23,10 @@
 
 <script>
 import { Button } from 'vant';
-import QOne from './question.vue/Q-one';
-import QTwo from './question.vue/Q-two';
+import QOne from './question/Q-one';
+import QTwo from './question/Q-two';
 import Layout from '@c/layout.vue';
+import ComStatus from '@c/status.vue';
 
 export default {
   name: "Home",
@@ -32,7 +34,8 @@ export default {
     vanButton: Button,
     QOne,
     QTwo,
-    Layout
+    Layout,
+    ComStatus
   },
   data() {
     return {
