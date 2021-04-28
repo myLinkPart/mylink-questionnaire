@@ -75,11 +75,13 @@ export default {
         type: "" // 类别：界面、体验、功能
       },
       status: '',
-      msg: ''
+      msg: '',
+      isRepeat: false,
     };
   },
   created() {},
   mounted() {
+    window.setWebViewFlag = () => {};
   },
   methods: {
     // 题目一
@@ -94,7 +96,8 @@ export default {
     // 多选
     selectSub(val){
       if(val.length) {
-        this.submitParam.content = val.filter(item => item !== 'input').join(',');
+        let temp = val.filter(item => item !== 'input');
+        this.submitParam.content = JSON.stringify(temp);
         this.disabled = false;
       } else {
         this.disabled = true;
@@ -120,6 +123,10 @@ export default {
     // 提交结果页按钮点击
     statusClick() {
       if(this.status === 'fail') {
+        if(this.isRepeat) {
+          this.toMyPoints();
+          return;
+        }
         // 失败时，返回答题页
         this.toResult = false;
         this.active = 1;
@@ -139,9 +146,14 @@ export default {
           this.msg = `100 ${this.$t('发送积分')}`;
         } else {
           this.status  = 'fail';
-          this.statusText = this.$t('重新填写');
           this.msg = this.languageType === 'sc' ? res.msg :
           this.languageType === 'tc' ? res.msgTw : res.msgEn;
+          if(+res.code === 1081) {
+            this.isRepeat = true;
+            this.statusText = this.$t('我的积分');
+          } else {
+            this.statusText = this.$t('重新填写');
+          }
         }
         this.toResult = true;
       })

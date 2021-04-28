@@ -64,9 +64,9 @@ export default {
     vanButton: Button,
     ComStatus
   },
-  created() {
-  },
+  created() {},
   mounted() {
+    window.setWebViewFlag = () => {};
   },
   methods: {
     selectQ1(val) {

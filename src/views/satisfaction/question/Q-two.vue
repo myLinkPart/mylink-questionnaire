@@ -26,10 +26,10 @@
           @change="selectSub"
         >
           <van-checkbox
-            v-for="(item, index) in index.child.questions"
-            :name="item"
+            v-for="(item, index) in index.questions"
+            :name="`选项${index+1}`"
             :key="index"
-          >{{  item }}</van-checkbox>
+          >{{ item }}</van-checkbox>
           <van-checkbox name="input">
             <van-field
               v-model="custom"
@@ -62,50 +62,6 @@ export default {
       Q2: '',
       Q2More: [],
       custom: '',
-      satisfyRadioArr: [
-      {
-        name: this.$t('satisfaction.界面设计'),
-        value: '界面',
-        child: {
-          questions: ['界面设计清晰','界面设计够简洁','排榜整齐', '很时尚']
-        }
-      },
-      {
-        name: this.$t('satisfaction.用户体验'),
-        value: '体验',
-        child: {
-          questions: []
-        }
-      },
-      {
-        name: this.$t('satisfaction.功能服务'),
-        value: '功能',
-        child: {
-          questions: []
-        }
-      }],
-      badRadioArr: [
-      {
-        name: this.$t('satisfaction.界面设计'),
-        value: '界面',
-        child: {
-          questions: ['不满意1','不满意2','不满意3', '不满意4']
-        }
-      },
-      {
-        name: this.$t('satisfaction.用户体验'),
-        value: '体验',
-        child: {
-          questions: []
-        }
-      },
-      {
-        name: this.$t('satisfaction.功能服务'),
-        value: '功能',
-        child: {
-          questions: []
-        }
-      }]
     };
   },
   computed: {
@@ -113,17 +69,29 @@ export default {
       return this.radioArr.find(item => item.value === this.Q2);
     },
     title() {
-      return [1,2,3].includes(this.$bus.Q1Select)?
-      this.$t('satisfaction.不满意_题目2') :
-      this.$t('satisfaction.满意_题目2');
+      return this.$t(`satisfaction.${this.$bus.satisfy? '' : '不'}满意_题目2`);
     },
     subTitle() {
-      return [1,2,3].includes(this.$bus.Q1Select)?
-      this.$t('satisfaction.不满意_多选标题') :
-      this.$t('satisfaction.满意_多选标题');
+      return this.$t(`satisfaction.${this.$bus.satisfy? '' : '不'}满意_多选标题`);
     },
     radioArr() {
-      return [1,2,3].includes(this.$bus.Q1Select)? this.badRadioArr: this.satisfyRadioArr;
+      return [
+        {
+          name: this.$t('satisfaction.界面设计'),
+          value: '界面',
+          questions: this.$t(`satisfaction.${this.$bus.satisfy? '' : '不'}满意多选项.界面`)
+        },
+        {
+          name: this.$t('satisfaction.用户体验'),
+          value: '体验',
+          questions: this.$t(`satisfaction.${this.$bus.satisfy? '' : '不'}满意多选项.体验`)
+        },
+         {
+          name: this.$t('satisfaction.功能服务'),
+          value: '功能',
+          questions: this.$t(`satisfaction.${this.$bus.satisfy? '' : '不'}满意多选项.功能`)
+        }
+      ];
     }
   },
   methods: {
@@ -159,7 +127,7 @@ export default {
     font-size: 28px * $scale;
   }
   .van-checkbox{
-    margin: 30px * $scale 0 30px * $scale 65px * $scale;
+    margin: 30px * $scale 0 30px * $scale 20px * $scale;
   }
   .van-field {
     padding: 0;

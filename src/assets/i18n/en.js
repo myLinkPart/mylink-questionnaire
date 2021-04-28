@@ -25,6 +25,28 @@ module.exports = {
     '不满意_多选标题': 'Please select the reason for your dissatisfaction:(Multiple Choice)*',
     '满意_多选标题': 'Please select the reason for your dissatisfaction:(Multiple Choice)*',
     '其他': 'Others (if any)',
+    '满意多选项': {
+      '界面': ['MyLink App display inforrmaion clearly，which make the communications service conspicuous and easy to find.',
+              'Abundant information of  promotions can be simply found in the Jetso section of  MyLink App.',
+              'A small red dot is noticeable when MyLink App is trying to let users know new messages or messages about member points.'],
+      '体验': ['Online service on MyLink App is convenient. When you redeem the reward points, it provides delivery service. Or you can also take your reward in the Self-pickup cabinet.',
+              'Novice guidance and multiple ways of login are available on MyLink App, which enable new users  to get started quickly.',
+              'MyLink App provides good customer service with quick response.'],
+      '功能': ['MyLink App provides abundant communications service and hiking activities.',
+              'Points can be easily earned by finishing the tasks published by task center of MyLink App.',
+              'While you are topping up your phone on MyLink App, multiple payment methods, including paying by points, are provided.']
+    },
+    '不满意多选项': {
+      '界面': ['MyLink App is difficult to use,because the interface design is complex with little instructions for its users.',
+              'The font display on MyLink App is nonselectable, which may bring inconvenience when the font size is too large or too small.',
+              'The skins of the interface are not enabled to change on MyLink App.'],
+      '体验': ['Slow loading times and excessive popup ads on MyLink App make users feel upset.',
+              'Your beloved product in the reward mall can only be redeemed by accumulated points even if you want to pay money for it.',
+              'The discounts in the Jetso section is not deep enough while the variety of products available in the reward mall are not satisfiable.'],
+      '功能': ['The pedometer(WeWalk) on MyLink App is not precise enough.',
+              'The personalized video contents on MyLink App is not rich enough.',
+              'The bill shown on MyLink App is presented in a pdf file, and the details of it are not clear enough.']
+    },
   },
   preference: {
     '头部banner': require('../../../static/img/zh/p-banner.png'),

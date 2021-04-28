@@ -12,9 +12,9 @@ const routes = [
         name: "satisfaction",
         component: Satisfaction,
         meta: {
-            titleZh: "MyLink 问卷调查",
-            titleEn: "MyLink Welcome Offers",
-            titleTw: "MyLink 迎新禮遇",
+            titleZh: "Link你的心声",
+            titleEn: "TBC",
+            titleTw: "Link你的心聲",
         },
     },
     {
@@ -22,9 +22,9 @@ const routes = [
         name: "preference",
         component: Preference,
         meta: {
-            titleZh: "MyLink 迎新礼遇",
-            titleEn: "MyLink Welcome Offers",
-            titleTw: "MyLink 迎新禮遇",
+            titleZh: "用量查询你话事",
+            titleEn: "TBC",
+            titleTw: "用量查詢你話事",
         },
     },
 ];
