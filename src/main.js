@@ -2,8 +2,10 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { get, post } from '@utils/fetch';
+import VueBus from '@utils/bus';
 Vue.prototype.$get = get;
 Vue.prototype.$post = post;
+Vue.use(VueBus);
 
 import "../static/js/rem.js";
 import "../static/css/reset.css";

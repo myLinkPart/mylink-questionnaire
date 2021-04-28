@@ -2,7 +2,7 @@
   <div class="Q-two">
     <div class="q-title">
       <div class="q-tip">Q2</div>
-      您最满意的内容？*
+      {{ title }}
     </div>
     <div class="q-sub-content">
       <van-radio-group
@@ -62,7 +62,7 @@ export default {
       Q2: '',
       Q2More: [],
       custom: '',
-      radioArr: [
+      satisfyRadioArr: [
       {
         name: '界面设计',
         value: '界面',
@@ -87,11 +87,42 @@ export default {
           questions: []
         }
       }],
+      badRadioArr: [
+      {
+        name: '界面设计',
+        value: '界面',
+        child: {
+          title: '您最不满意界面的内容（多选）*',
+          questions: ['不满意1','不满意2','不满意3', '不满意4']
+        }
+      },
+      {
+        name: '用户体验',
+        value: '体验',
+        child: {
+          title: '您最满意体验的内容（多选）*', 
+          questions: []
+        }
+      },
+      {
+        name: '栏目功能',
+        value: '功能',
+        child: {
+          title: '您最满意栏目的内容（多选）*',
+          questions: []
+        }
+      }]
     };
   },
   computed: {
     index() {
       return this.radioArr.find(item => item.value === this.Q2);
+    },
+    title() {
+      return [1,2,3].includes(this.$bus.Q1Select)? '您最不满意的内容？*': '您最满意的内容？*';
+    },
+    radioArr() {
+      return [1,2,3].includes(this.$bus.Q1Select)? this.badRadioArr: this.satisfyRadioArr;
     }
   },
   methods: {

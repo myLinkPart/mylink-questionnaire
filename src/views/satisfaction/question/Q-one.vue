@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     selectQ1() {
+      this.$bus.Q1Select = this.Q1;
       this.$emit('selectQ1', this.Q1);
     }
   }
