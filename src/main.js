@@ -14,7 +14,7 @@ import i18n from "@tools/i18n"; // 国际化
 
 import Vconsole from "vconsole"; // Vconsole 配置
 
-if (process.env.NODE_ENV !== "production" || window.location.href.indexOf('debug=true') > -1) {
+if (process.env.VUE_APP_ENV_REAL !== "production" || window.location.href.indexOf('debug=true') > -1) {
     let vConsole = new Vconsole();
     Vue.use(vConsole);
 }
