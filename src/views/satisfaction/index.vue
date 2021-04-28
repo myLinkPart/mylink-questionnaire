@@ -140,7 +140,8 @@ export default {
         } else {
           this.status  = 'fail';
           this.statusText = this.$t('重新填写');
-          this.msg = res.msg;
+          this.msg = this.languageType === 'sc' ? res.msg :
+          this.languageType === 'tc' ? res.msgTw : res.msgEn;
         }
         this.toResult = true;
       })

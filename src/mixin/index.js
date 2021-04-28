@@ -2,6 +2,9 @@ export default {
   data() {
     return {};
   },
+  languageType() {
+    return sessionStorage.getItem("lang");
+  },
   methods: {
     // 去"我的积分"页面
     toMyPoints() {
