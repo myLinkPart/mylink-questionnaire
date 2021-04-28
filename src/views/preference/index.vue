@@ -24,6 +24,7 @@
           v-else
           round
           color="#6f38d4"
+          :disabled="disabled"
           block
           @click="statusClick"
         >
@@ -74,7 +75,7 @@ export default {
     // 提交
     submit() {
       if(!isApp()) {
-        callMylinkApp();
+        callMylinkApp(window.location.href);
         return;
       }
       console.log('提交的数据', this.submitParam);
@@ -95,7 +96,9 @@ export default {
     // 提交结果页按钮点击
     statusClick() {
       if(this.status === 'fail') {
+        // 失败时，返回答题页
         this.toResult = false;
+        this.statusText = '提交';
       } else {
         this.toMyPoints();
       }

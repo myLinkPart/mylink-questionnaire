@@ -1,7 +1,7 @@
 <template>
   <div class="q-layout">
     <div class="center_box">
-      <div v-if="showContent">
+      <div v-show="showContent">
         <div class="q-banner">
           <slot name="banner"></slot>
         </div>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="other" v-else>
+      <div class="other" v-show="!showContent">
         <slot name="other"></slot>
       </div>
       <div class="bottom">

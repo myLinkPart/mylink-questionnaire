@@ -19,6 +19,7 @@
       <div slot="bottom">
         <van-button
           v-if="!toResult"
+          :disabled="disabled"
           round
           color="#6f38d4"
           block
@@ -31,6 +32,7 @@
           round
           color="#6f38d4"
           block
+          :disabled="disabled"
           @click="statusClick"
         >
           {{statusText}}
@@ -110,14 +112,17 @@ export default {
         if(isApp()) {
           this.submit();
         } else {
-          callMylinkApp();
+          callMylinkApp(window.location.href);
         }
       }
     },
     // 提交结果页按钮点击
     statusClick() {
       if(this.status === 'fail') {
+        // 失败时，返回答题页
         this.toResult = false;
+        this.active = 1;
+        this.statusText = '提交';
       } else {
         this.toMyPoints();
       }

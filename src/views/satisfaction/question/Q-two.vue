@@ -135,6 +135,9 @@ export default {
       this.$emit('selectSub', this.Q2More)
     },
     changeOther() {
+      if(this.custom && !this.custom.includes('input')) {
+        this.Q2More.splice(this.custom.length, 0, 'input');
+      }
       this.$emit('changeOther', this.custom)
     }
   }

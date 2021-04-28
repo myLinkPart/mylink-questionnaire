@@ -60,6 +60,8 @@ router.beforeEach((to, from, next) => {
             message: 'login error'
           })
         })
+      } else {
+        next();
       }
     });
   } else {
