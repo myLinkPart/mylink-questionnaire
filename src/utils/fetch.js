@@ -80,14 +80,23 @@ httpService.interceptors.response.use(
  *  get请求
  *  url:请求地址
  *  params:参数
+ *  headers: 请求头
+ *  notToAuth: 验证信息
  * */
-export function get(url, params = {}) {
+export function get(url, params = {}, headers = {}, notToAuth = false) {
     return new Promise((resolve, reject) => {
+        // 验证信息
+        const auth = { Authorization: `Bear ${localStorage.getItem('jwt')}` }
+        // 不进行验证
+        if (notToAuth) {
+            Reflect.deleteProperty(auth, 'Authorization')
+        }
         httpService({
             url: url,
             method: 'get',
             headers: {
-                Authorization: `Bear ${sessionStorage.getItem('jwt_questionnaire')}`,
+                ...headers,
+                ...auth
             },
             params: {
                 ...params,
@@ -105,13 +114,23 @@ export function get(url, params = {}) {
  *  url:请求地址
  *  params:参数
  * */
-export function post(url, params = {}, headers = {}) {
+export function post(url, params = {}, headers = {}, notToAuth = false) {
     return new Promise((resolve, reject) => {
+        // 验证信息
+        const auth = { Authorization: `Bear ${localStorage.getItem('jwt_questionnaire')}` }
+        // 不进行验证
+        if (notToAuth) {
+            Reflect.deleteProperty(auth, 'Authorization')
+        }
+
         httpService({
             url: url,
             method: 'post',
-            headers,
-            params: {
+            headers: {
+                ...headers,
+                ...auth,
+            },
+            data: {
                 ...params,
             }
         }).then(response => {

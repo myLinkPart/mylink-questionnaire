@@ -11,14 +11,27 @@
         @selectSub="selectSub"
         @changeOther="changeOther"
       />
-      <com-status slot="other" />
+      <com-status
+        slot="other"
+        :status="status"
+        :msg="msg"
+      />
       <div slot="bottom">
         <van-button
+          v-if="!toResult"
           round
           color="#6f38d4"
           block
-          :disabled="disabled"
           @click="next"
+        >
+          {{statusText}}
+        </van-button>
+        <van-button
+          v-else
+          round
+          color="#6f38d4"
+          block
+          @click="statusClick"
         >
           {{statusText}}
         </van-button>
@@ -33,6 +46,8 @@ import QOne from './question/Q-one';
 import QTwo from './question/Q-two';
 import Layout from '@c/layout.vue';
 import ComStatus from '@c/status.vue';
+import index from '@/mixin/index.js';
+import { isApp, callMylinkApp } from "@common/handle.js";
 
 export default {
   name: "Home",
@@ -43,6 +58,7 @@ export default {
     Layout,
     ComStatus
   },
+  mixins: [index],
   data() {
     return {
       active: 0,
@@ -54,7 +70,9 @@ export default {
         other: "", // 其他内容
         score: 0, // 满意度
         type: "" // 类别：界面、体验、功能
-      }
+      },
+      status: '',
+      msg: ''
     };
   },
   created() {},
@@ -89,14 +107,39 @@ export default {
         this.disabled = true;
         this.statusText = '提交';
       }else {
-        this.toResult = true;
-        this.submit();
-      } 
+        if(isApp()) {
+          this.submit();
+        } else {
+          callMylinkApp();
+        }
+      }
+    },
+    // 提交结果页按钮点击
+    statusClick() {
+      if(this.status === 'fail') {
+        this.toResult = false;
+      } else {
+        this.toMyPoints();
+      }
     },
     // 提交
     submit() {
       console.log('提交内容', this.submitParam);
-    }
+      this.$post("/survey/satisfy/add", this.submitParam).then(res => {
+        if(+res.code === 0) {
+          console.log(res);
+          this.status  = 'success';
+          this.statusText = '我的积分';
+          this.msg = '100積分已送到閣下賬戶，您可以到積分明細查看。';
+        } else {
+          this.status  = 'fail';
+          this.statusText = '返回';
+          this.msg = res.msg;
+        }
+        this.toResult = true;
+      })
+    },
+
   },
 };
 </script>

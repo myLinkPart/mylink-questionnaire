@@ -39,7 +39,7 @@ router.beforeEach((to, from, next) => {
       let isLogin = !localStorage.getItem("jwt_questionnaire") || obj.authorization !== JSON.parse(localStorage.getItem("userInfo") || "{}").authorization;
       if(isLogin){
         localStorage.setItem("userInfo", JSON.stringify(obj));
-        Vue.prototype.$post("/user/login/", {
+        Vue.prototype.$post("/user/login", {
           token: JSON.parse(localStorage.getItem("userInfo")).authorization
         }).then(res => {
           if (+res.code === 0) {

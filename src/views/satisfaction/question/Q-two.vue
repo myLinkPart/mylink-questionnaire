@@ -15,7 +15,7 @@
         <van-radio
           v-for="(item, index) of radioArr"
           :key="index"
-          :name="item.name"
+          :name="item.value"
         >{{item.name}}</van-radio>
       </van-radio-group>
       <div class="q-other" v-if="Q2">
@@ -65,6 +65,7 @@ export default {
       radioArr: [
       {
         name: '界面设计',
+        value: '界面',
         child: {
           title: '您最满意界面的内容（多选）*',
           questions: ['界面设计清晰','界面设计够简洁','排榜整齐', '很时尚']
@@ -72,6 +73,7 @@ export default {
       },
       {
         name: '用户体验',
+        value: '体验',
         child: {
           title: '您最满意体验的内容（多选）*', 
           questions: []
@@ -79,6 +81,7 @@ export default {
       },
       {
         name: '栏目功能',
+        value: '功能',
         child: {
           title: '您最满意栏目的内容（多选）*',
           questions: []
@@ -88,7 +91,7 @@ export default {
   },
   computed: {
     index() {
-      return this.radioArr.find(item => item.name === this.Q2);
+      return this.radioArr.find(item => item.value === this.Q2);
     }
   },
   methods: {

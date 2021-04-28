@@ -40,23 +40,21 @@ export default {
   justify-content: center;
   align-items: center;
   .img{
-    width: 68px * $scale;
+    width: 120px * $scale;
     margin: 0 auto;
     img {
       width: 100%;
     }
   }
   .title {
-    font-size: 28px * $scale;
+    font-size: 0.2rem;
     text-align: center;
-    font-size: 24px * $scale;
     margin: 47px * $scale 0 10px * $scale 0;
   }
   .sub {
-    font-size: 24px * $scale;
+    font-size: 0.12rem;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    font-size: 12px * $scale;
   }
 }
 </style>

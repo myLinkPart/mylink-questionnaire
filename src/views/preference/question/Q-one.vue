@@ -12,8 +12,8 @@
         @change="selectQ1"
       >
         <van-radio
-          v-for="item of radioArr"
-          :key="item.value"
+          v-for="(item, index) of radioArr"
+          :key="index"
           :name="item.value"
         >
           {{ item.name }}
@@ -38,11 +38,11 @@ export default {
       Q1: '',
       radioArr: [{
         name: '顯示剩餘的用量',
-        value: 1,
+        value: '剩余',
         img: this.$t('preference.选项1')
       }, {
         name: '顯示已使用的用量',
-        value: 2,
+        value: '已使用',
         img: this.$t('preference.选项2')
       }]
     }

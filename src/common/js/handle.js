@@ -126,8 +126,6 @@ export const shareFun = (obj) => {
   }
 };
 
-
-
 // 唤起App
 export const callApp = (url, link2) => {
     let _url = url || "";
