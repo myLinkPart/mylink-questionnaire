@@ -17,6 +17,7 @@
           block
           :disabled="disabled"
           @click="submit"
+          v-prevent-re-click
         >
           {{statusText}}
         </van-button>

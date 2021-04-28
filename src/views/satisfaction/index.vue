@@ -24,6 +24,7 @@
           color="#6f38d4"
           block
           @click="next"
+          v-prevent-re-click
         >
           {{statusText}}
         </van-button>
@@ -127,6 +128,10 @@ export default {
         this.toMyPoints();
       }
     },
+    // submit() {
+    //   console.log(111)
+    //   this.debounce(this.postData(), 1000);
+    // },
     // 提交
     submit() {
       console.log('提交内容', this.submitParam);
