@@ -84,11 +84,11 @@ export default {
         console.log(res);
         if(+res.code === 0) {
           this.status  = 'success';
-          this.statusText = '我的积分';
+          this.statusText = this.$t('我的积分');
           this.msg = '100積分已送到閣下賬戶，您可以到積分明細查看。';
         } else {
           this.status  = 'fail';
-          this.statusText = '返回';
+          this.statusText = this.$t('重新填写');
           this.msg = res.msg;
         }
         this.toResult = true;

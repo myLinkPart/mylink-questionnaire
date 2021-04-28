@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       active: 0,
-      statusText: '下一步',
+      statusText: this.$t('下一步'),
       disabled: true,
       toResult: false,
       submitParam: {
@@ -128,10 +128,6 @@ export default {
         this.toMyPoints();
       }
     },
-    // submit() {
-    //   console.log(111)
-    //   this.debounce(this.postData(), 1000);
-    // },
     // 提交
     submit() {
       console.log('提交内容', this.submitParam);
@@ -139,11 +135,11 @@ export default {
         if(+res.code === 0) {
           console.log(res);
           this.status  = 'success';
-          this.statusText = '我的积分';
-          this.msg = '100積分已送到閣下賬戶，您可以到積分明細查看。';
+          this.statusText = this.$t('我的积分');
+          this.msg = `100 ${this.$t('发送积分')}`;
         } else {
           this.status  = 'fail';
-          this.statusText = '返回';
+          this.statusText = this.$t('重新填写');
           this.msg = res.msg;
         }
         this.toResult = true;

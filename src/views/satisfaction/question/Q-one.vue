@@ -2,7 +2,7 @@
   <div class="Q-one">
     <div class="q-title">
       <div class="q-tip">Q1</div>
-        您是否满意Mylink体验？*
+        {{ $t('satisfaction.题目1') }}
       </div>
     <div class="q-sub-content">
       <van-radio-group
@@ -46,7 +46,12 @@ export default {
   data() {
     return {
       Q1: '',
-      radioTextArr: ['非常不满意', '不满意', '一般满意', '满意', '非常满意']
+      radioTextArr: [
+        this.$t('satisfaction.非常不满意'),
+        this.$t('satisfaction.不满意'),
+        this.$t('satisfaction.一般满意'),
+        this.$t('satisfaction.满意'),
+        this.$t('satisfaction.非常满意')]
     }
   },
   methods: {

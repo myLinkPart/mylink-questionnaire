@@ -2,7 +2,7 @@
   <div class="Q-one-p">
     <div class="q-title">
       <div class="q-tip">Q1</div>
-      <span>請選擇用量進度條顯示更能讓你理解的（單選）*</span>
+      <span>{{ $t('preference.题目') }}</span>
     </div>
     <div class="q-sub-content">
       <van-radio-group
@@ -37,11 +37,11 @@ export default {
     return {
       Q1: '',
       radioArr: [{
-        name: '顯示剩餘的用量',
+        name: this.$t('preference.选项1题目'),
         value: '剩余',
         img: this.$t('preference.选项1')
       }, {
-        name: '顯示已使用的用量',
+        name: this.$t('preference.选项2题目'),
         value: '已使用',
         img: this.$t('preference.选项2')
       }]

@@ -7,7 +7,7 @@
         </div>
         <div class="middle_box">
           <div class="q-content">
-            <div class="q-require">*必须填写</div>
+            <div class="q-require">{{ $t('必须填写') }}</div>
             <div class="q-box">
               <div class="q-slot-content">
                 <slot name="middle"></slot>
@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="rule">
-            <div class="title">條款及細則</div>
+            <div class="title">{{ $t('规则') }}</div>
             <p>1、广东建设规划分局工会党纪国法</p>
             <p>1、广东建设规划分局工会党纪国法</p>
             <p>1、广东建设规划分局工会党纪国法</p>

@@ -19,7 +19,7 @@
         >{{item.name}}</van-radio>
       </van-radio-group>
       <div class="q-other" v-if="Q2">
-        <div class="q-title sub-title">{{ index.child.title }}</div>
+        <div class="q-title sub-title">{{ subTitle }}</div>
         <van-checkbox-group
           v-model="Q2More"
           checked-color="#6f38d4"
@@ -34,8 +34,8 @@
             <van-field
               v-model="custom"
               name="其他"
-              label="其他"
-              placeholder="请输入其他满意内容"
+              :label="$t('satisfaction.其他')"
+              placeholder="请输入其他内容"
               @change="changeOther"
             />
           </van-checkbox>
@@ -64,51 +64,45 @@ export default {
       custom: '',
       satisfyRadioArr: [
       {
-        name: '界面设计',
+        name: this.$t('satisfaction.界面设计'),
         value: '界面',
         child: {
-          title: '您最满意界面的内容（多选）*',
           questions: ['界面设计清晰','界面设计够简洁','排榜整齐', '很时尚']
         }
       },
       {
-        name: '用户体验',
+        name: this.$t('satisfaction.用户体验'),
         value: '体验',
         child: {
-          title: '您最满意体验的内容（多选）*', 
           questions: []
         }
       },
       {
-        name: '栏目功能',
+        name: this.$t('satisfaction.功能服务'),
         value: '功能',
         child: {
-          title: '您最满意栏目的内容（多选）*',
           questions: []
         }
       }],
       badRadioArr: [
       {
-        name: '界面设计',
+        name: this.$t('satisfaction.界面设计'),
         value: '界面',
         child: {
-          title: '您最不满意界面的内容（多选）*',
           questions: ['不满意1','不满意2','不满意3', '不满意4']
         }
       },
       {
-        name: '用户体验',
+        name: this.$t('satisfaction.用户体验'),
         value: '体验',
         child: {
-          title: '您最满意体验的内容（多选）*', 
           questions: []
         }
       },
       {
-        name: '栏目功能',
+        name: this.$t('satisfaction.功能服务'),
         value: '功能',
         child: {
-          title: '您最满意栏目的内容（多选）*',
           questions: []
         }
       }]
@@ -119,7 +113,14 @@ export default {
       return this.radioArr.find(item => item.value === this.Q2);
     },
     title() {
-      return [1,2,3].includes(this.$bus.Q1Select)? '您最不满意的内容？*': '您最满意的内容？*';
+      return [1,2,3].includes(this.$bus.Q1Select)?
+      this.$t('satisfaction.不满意_题目2') :
+      this.$t('satisfaction.满意_题目2');
+    },
+    subTitle() {
+      return [1,2,3].includes(this.$bus.Q1Select)?
+      this.$t('satisfaction.不满意_多选标题') :
+      this.$t('satisfaction.满意_多选标题');
     },
     radioArr() {
       return [1,2,3].includes(this.$bus.Q1Select)? this.badRadioArr: this.satisfyRadioArr;

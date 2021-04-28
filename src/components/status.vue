@@ -5,7 +5,7 @@
         <img v-if="status === 'fail'" :src="require('../../static/img/failure.png')" alt="" >
         <img v-if="status === 'success'" :src="require('../../static/img/success.png')" alt="" >
       </div>
-      <p class="title">{{ status === 'fail'? '提交失败!': '提交成功' }}</p>
+      <p class="title">{{ status === 'fail'? $('提交失败'): $('提交成功') }}</p>
       <p class="sub">{{ msg }}</p>
     </div>
   </div>
