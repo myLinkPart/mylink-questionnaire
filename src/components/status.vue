@@ -55,6 +55,7 @@ export default {
     font-size: 0.12rem;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
+    padding: 0 40px * $scale;
   }
 }
 </style>

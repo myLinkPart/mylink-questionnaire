@@ -25,7 +25,6 @@
           v-else
           round
           color="#6f38d4"
-          :disabled="disabled"
           block
           @click="statusClick"
         >
@@ -50,7 +49,7 @@ export default {
   data() {
     return {
       statusText: '提交',
-      disabled: false,
+      disabled: true,
       toResult: false,
       submitParam: {
         content: ''
@@ -71,7 +70,12 @@ export default {
   },
   methods: {
     selectQ1(val) {
-      this.submitParam.content = val;
+      if(val) {
+        this.submitParam.content = val;
+        this.disabled = false;
+      } else {
+        this.disabled = true;
+      }
     },
     // 提交
     submit() {
