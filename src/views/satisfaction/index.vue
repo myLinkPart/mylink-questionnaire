@@ -143,7 +143,7 @@ export default {
           console.log(res);
           this.status  = 'success';
           this.statusText = this.$t('我的积分');
-          this.msg = `100 ${this.$t('发送积分')}`;
+          this.msg = `500 ${this.$t('发送积分')}`;
         } else {
           this.status  = 'fail';
           this.msg = this.languageType === 'sc' ? res.msg :

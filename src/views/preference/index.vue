@@ -89,7 +89,7 @@ export default {
         if(+res.code === 0) {
           this.status  = 'success';
           this.statusText = this.$t('我的积分');
-          this.msg = `100 ${this.$t('发送积分')}`;
+          this.msg = `200 ${this.$t('发送积分')}`;
         } else {
           this.status  = 'fail';
           this.statusText = this.$t('重新填写');
