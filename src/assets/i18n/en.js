@@ -10,7 +10,7 @@ module.exports = {
   '重新填写': 'Please try again.',
   '我的积分': 'MyLink Points',
   satisfaction: {
-    '头部banner': require('../../../static/img/zh/s-banner.png'),
+    '头部banner': require('../../../static/img/en/s-banner.png'),
     '题目1': 'How would you rate MyLink app?(Single Choice)*',
     '非常不满意': 'Very Dissatisfied', 
     '不满意': 'Dissatisfied',
@@ -49,7 +49,7 @@ module.exports = {
     },
   },
   preference: {
-    '头部banner': require('../../../static/img/zh/p-banner.png'),
+    '头部banner': require('../../../static/img/en/p-banner.png'),
     '题目': 'Which one of the following data displays would you prefer?(Single Choice)*',
     '选项1题目': 'Display data remaining',
     '选项2题目': 'Display data usage',
