@@ -116,10 +116,10 @@ export default {
 <style lang="scss" scoped>
 .Q-two {
   .sub-title.sub-title {
-    margin-top: 40px * $scale;
+    margin-top: 60px * $scale;
     text-align: center;
     border-bottom: 0;
-    border-top: 1px dashed rgba(106, 67, 209, .7);
+    border-top: 1px dashed rgba(106, 67, 209, .3);
     padding-top: 60px * $scale;
     justify-content: center;
   }

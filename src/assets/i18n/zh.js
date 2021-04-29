@@ -49,7 +49,7 @@ module.exports = {
               'MyLink账单为pdf格式，明细展示不够清晰']
     },
     '规则内容': `
-        MyLink「Link你的心声」任务（「本任务」）条款及细则<br/><br/>
+        <div class="title">MyLink「Link你的心声」任务（「本任务」）条款及细则</div><br/>
         1.本任务由中国移动香港有限公司（「中国移动香港」）主办。<br/><br/>
         2.本任务于即日起至2021年5月31日23:59pm（香港时间）完结（「任务期」）。<br/><br/>
         3.本任务适用于MyLink用户（「合资格客户」）。<br/><br/>
@@ -76,7 +76,7 @@ module.exports = {
     '选项1': require('../../../static/img/zh/q-one-1.png'),
     '选项2': require('../../../static/img/zh/q-one-2.png'),
     '规则内容': `
-        MyLink「用量查询你话事」任务（「本任务」）条款及细则<br/><br/>
+    <div class="title">MyLink「用量查询你话事」任务（「本任务」）条款及细则</div><br/>
         1.本任务由中国移动香港有限公司（「中国移动香港」）主办。<br/><br/>
         2.本任务于即日起至2021年5月31日23:59pm（香港时间）完结（「任务期」）。<br/><br/>
         3.本任务适用于MyLink用户（「合资格客户」）。<br/><br/>

@@ -49,7 +49,7 @@ module.exports = {
               'The bill shown on MyLink App is presented in a pdf file, and the details of it are not clear enough.']
     },
     '规则内容': `
-      Terms and Conditions for "Listen to Your Voice" (the "Task") <br/> <br/>
+      <div class="title">Terms and Conditions for "Listen to Your Voice" (the "Task") </div><br/>
       1.This Task is organized by China Mobile Hong Kong Company Limited (“CMHK”).<br/> <br/>
       2.This Task runs from now to 31 May 2021 at 23:59 p.m. (Hong Kong time) (“Task Period”). <br/> <br/>
       3.This Task is applicable to MyLink customers (“Eligible Customers”) .<br/> <br/>
@@ -77,7 +77,7 @@ module.exports = {
     '选项1': require('../../../static/img/en/q-one-1.png'),
     '选项2': require('../../../static/img/en/q-one-2.png'),
     '规则内容': `
-    Terms and Conditions for "Style Usage Enquiry Card" (the "Task") <br/> <br/>
+      <div class="title">Terms and Conditions for "Style Usage Enquiry Card" (the "Task") </div><br/>
       1.This Task is organized by China Mobile Hong Kong Company Limited (“CMHK”).<br/> <br/>
       2.This Task runs from now to 31 May 2021 at 23:59 p.m. (Hong Kong time) (“Task Period”). <br/> <br/>
       3.This Task is applicable to MyLink customers (“Eligible Customers”) .<br/> <br/>

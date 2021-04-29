@@ -17,7 +17,7 @@
   padding-bottom: 26px * $scale;
   font-size: 30px * $scale;
   font-weight: bold;
-  border-bottom: 1px dashed rgba(106, 67, 209, .7);
+  border-bottom: 1px dashed rgba(106, 67, 209, .3);
   display: flex;
   align-items: center;
 }
@@ -33,7 +33,7 @@
 }
 
 .q-sub-content {
-  margin-top: 40px * $scale;
+  margin-top: 60px * $scale;
   .van-radio-group.horRadio {
     font-size: 28px * $scale;
   }
@@ -46,7 +46,7 @@
       .van-radio__label {
         margin-left: 0;
         margin-bottom: 20px * $scale;
-        font-weight: 500;
+        font-weight: bold;
         line-height: normal;
         text-align: center;
       }
@@ -57,7 +57,8 @@
 .q-content {
   .van-radio__icon .van-icon,
   .van-checkbox__icon .van-icon {
-    border: 1px solid #6f38d4;
+    border: 2px solid #6f38d4;
+    line-height: 1.2;
   }
   .van-checkbox__label {
     color: #333;
@@ -70,7 +71,7 @@
   font-size: 22px * $scale;
   padding: 20px * $scale 50px * $scale;
   .title {
-    line-height: 58px * $scale;
+    margin-top: 34px * $scale;
     font-size: 24px * $scale;
     font-weight: bold;
   }

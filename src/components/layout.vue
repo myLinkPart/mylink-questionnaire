@@ -15,11 +15,11 @@
             </div>
           </div>
           <div class="rule" v-if="type === 'satisfy'">
-            <div class="title">{{ $t('规则') }}</div>
+            <!-- <div class="title">{{ $t('规则') }}</div> -->
             <div v-html="$t('satisfaction.规则内容')"></div>
           </div>
           <div class="rule" v-else>
-            <div class="title">{{ $t('规则') }}</div>
+            <!-- <div class="title">{{ $t('规则') }}</div> -->
             <div v-html="$t('preference.规则内容')"></div>
           </div>
         </div>
