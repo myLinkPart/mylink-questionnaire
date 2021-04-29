@@ -53,7 +53,7 @@ module.exports = {
     '题目': '以下哪款數據用量顯示方式您認為更清晰？（單選）*',
     '选项1题目': '顯示剩餘用量',
     '选项2题目': '顯示已使用用量',
-    '选项1': require('../../../static/img/zh/q-one-1.png'),
-    '选项2': require('../../../static/img/zh/q-one-2.png'),
+    '选项1': require('../../../static/img/tw/q-one-1.png'),
+    '选项2': require('../../../static/img/tw/q-one-2.png'),
   }
 };

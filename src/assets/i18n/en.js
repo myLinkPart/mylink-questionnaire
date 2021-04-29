@@ -53,7 +53,7 @@ module.exports = {
     '题目': 'Which one of the following data displays would you prefer?(Single Choice)*',
     '选项1题目': 'Display data remaining',
     '选项2题目': 'Display data usage',
-    '选项1': require('../../../static/img/zh/q-one-1.png'),
-    '选项2': require('../../../static/img/zh/q-one-2.png'),
+    '选项1': require('../../../static/img/en/q-one-1.png'),
+    '选项2': require('../../../static/img/en/q-one-2.png'),
   }
 };
