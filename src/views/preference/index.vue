@@ -55,7 +55,8 @@ export default {
         content: ''
       },
       status: '',
-      msg: ''
+      msg: '',
+      isRepeat: false,
     };
   },
   components: {
@@ -92,9 +93,14 @@ export default {
           this.msg = `200 ${this.$t('发送积分')}`;
         } else {
           this.status  = 'fail';
-          this.statusText = this.$t('重新填写');
           this.msg = this.languageType === 'sc' ? res.msg :
           this.languageType === 'tc' ? res.msgTw : res.msgEn;
+          if(+res.code === 1081) {
+            this.isRepeat = true;
+            this.statusText = this.$t('我的积分');
+          } else {
+            this.statusText = this.$t('重新填写');
+          }
         }
         this.toResult = true;
       })
@@ -102,6 +108,10 @@ export default {
     // 提交结果页按钮点击
     statusClick() {
       if(this.status === 'fail') {
+        if(this.isRepeat) {
+          this.toMyPoints();
+          return;
+        }
         // 失败时，返回答题页
         this.toResult = false;
         this.statusText = this.$t('提交');
