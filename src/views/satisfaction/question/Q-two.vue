@@ -35,7 +35,7 @@
               v-model="custom"
               name="其他"
               :label="$t('satisfaction.其他')"
-              placeholder="请输入其他内容"
+              placeholder=""
               @change="changeOther"
             />
           </van-checkbox>

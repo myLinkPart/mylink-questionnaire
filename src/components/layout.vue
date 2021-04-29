@@ -14,12 +14,13 @@
               </div>
             </div>
           </div>
-          <div class="rule">
+          <div class="rule" v-if="type === 'satisfy'">
             <div class="title">{{ $t('规则') }}</div>
-            <p>1、广东建设规划分局工会党纪国法</p>
-            <p>1、广东建设规划分局工会党纪国法</p>
-            <p>1、广东建设规划分局工会党纪国法</p>
-            <p>1、广东建设规划分局工会党纪国法</p>
+            <div v-html="$t('satisfaction.规则内容')"></div>
+          </div>
+          <div class="rule" v-else>
+            <div class="title">{{ $t('规则') }}</div>
+            <div v-html="$t('preference.规则内容')"></div>
           </div>
         </div>
       </div>
@@ -40,6 +41,10 @@ export default {
     showContent: {
       type: Boolean,
       default: true
+    },
+    type: {
+      type: String,
+      default: 'satisfy'
     }
   }
 }

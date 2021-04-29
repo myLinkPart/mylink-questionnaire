@@ -1,7 +1,7 @@
 <template>
   <!-- 偏好问卷 -->
   <div class="preference">
-    <Layout :showContent="!toResult">
+    <Layout :showContent="!toResult" type="prefer">
       <img :src="$t('preference.头部banner')" alt="" slot="banner">
       <q-one slot="middle" @selectQ1="selectQ1" />
       <com-status
@@ -48,7 +48,7 @@ export default {
   mixins: [index],
   data() {
     return {
-      statusText: '提交',
+      statusText: this.$t('提交'),
       disabled: true,
       toResult: false,
       submitParam: {
@@ -104,7 +104,7 @@ export default {
       if(this.status === 'fail') {
         // 失败时，返回答题页
         this.toResult = false;
-        this.statusText = '提交';
+        this.statusText = this.$t('提交');
       } else {
         this.toMyPoints();
       }

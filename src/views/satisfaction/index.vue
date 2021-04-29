@@ -1,7 +1,7 @@
 <template>
 <!-- 满意度调查 -->
   <div class="satisfaction">
-    <Layout :showContent="!toResult">
+    <Layout :showContent="!toResult" type="satisfy">
       <img :src="$t('satisfaction.头部banner')" alt="" slot="banner">
       <q-one slot="middle" v-if="active === 0" @selectQ1="selectQ1" />
       <q-two
