@@ -17,7 +17,7 @@
           :key="item"
           :name="item"
         >
-          {{item}}分
+          {{item}}
         </van-radio>
       </van-radio-group>
       <div class="q-status">

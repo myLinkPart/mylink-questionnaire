@@ -111,7 +111,7 @@ export default {
       if(this.active < 1) {
         this.active++;
         this.disabled = true;
-        this.statusText = '提交';
+        this.statusText = this.$t('提交');
       }else {
         if(isApp()) {
           this.submit();
@@ -130,7 +130,7 @@ export default {
         // 失败时，返回答题页
         this.toResult = false;
         this.active = 1;
-        this.statusText = '提交';
+        this.statusText = this.$t('提交');
       } else {
         this.toMyPoints();
       }

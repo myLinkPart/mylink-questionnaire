@@ -9,6 +9,7 @@ module.exports = {
   '提交失败': '提交失败',
   '重新填写': '请重新填写',
   '我的积分': '我的积分',
+  '提交': '提交',
   satisfaction: {
     '头部banner': require('../../../static/img/zh/s-banner.png'),
     '题目1': '请为MyLink的服务打分：（单选）*',

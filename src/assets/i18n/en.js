@@ -9,6 +9,7 @@ module.exports = {
   '提交失败': 'Failed',
   '重新填写': 'Please try again.',
   '我的积分': 'MyLink Points',
+  '提交': 'Submit',
   satisfaction: {
     '头部banner': require('../../../static/img/en/s-banner.png'),
     '题目1': 'How would you rate MyLink app?(Single Choice)*',
@@ -21,7 +22,7 @@ module.exports = {
     '不满意_题目2': 'What is the most unsatisfying part of MyLink?(Single Choice)*',
     '界面设计': 'User Interface',
     '用户体验': 'User Experience',
-    '功能服务': 'Function&Serivice',
+    '功能服务': 'Function & Serivice',
     '不满意_多选标题': 'Please select the reason for your dissatisfaction:(Multiple Choice)*',
     '满意_多选标题': 'Please select the reason for your dissatisfaction:(Multiple Choice)*',
     '其他': 'Others (if any)',
