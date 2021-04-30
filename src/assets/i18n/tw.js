@@ -77,7 +77,7 @@ module.exports = {
     '选项1': require('../../../static/img/tw/q-one-1.png'),
     '选项2': require('../../../static/img/tw/q-one-2.png'),
     '规则内容': `
-      <div class="title">MyLink「用量查询你话事」任務（「本任務」）條款及細則</div><br/>
+      <div class="title">MyLink「用量查詢你話事」任務（「本任務」）條款及細則</div><br/>
       1.本任務由中國移動香港有限公司（「中國移動香港」）主辦。<div class="rule-height"></div>
       2.本任務於即日起至2021年5月31日23:59pm（香港時間）完結（「任務期」）。<div class="rule-height"></div>
       3.本任務適用於MyLink用戶(「合資格客戶」)。<div class="rule-height"></div>
