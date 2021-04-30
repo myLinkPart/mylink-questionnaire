@@ -52,11 +52,11 @@ module.exports = {
     '规则内容': `
       <div class="title">Terms and Conditions for "Listen to Your Voice" (the "Task") </div><br/>
       1.This Task is organized by China Mobile Hong Kong Company Limited (“CMHK”).<div class="rule-height"></div>
-      2.This Task runs from now to 31 May 2021 at 23:59 p.m. (Hong Kong time) (“Task Period”). <div class="rule-height"></div>
+      2.This Task runs from now to 2 May 2021 at 23:59 p.m. (Hong Kong time) (“Task Period”). <div class="rule-height"></div>
       3.This Task is applicable to MyLink customers (“Eligible Customers”) .<div class="rule-height"></div>
       4.To participate in this Task, Eligible Customers are required to download and log into MyLink.<div class="rule-height"></div>
       5.During the Task Period, Eligible Customers will receive 500 MyLink Points immediately after successful submission of the Task via MyLink Point zone. <div class="rule-height"></div>
-      6.Eligible Customers can enter "MyLink Points"->”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
+      6.Eligible Customers can enter "MyLink Points" -> ”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
       7.Each Eligible Customer may only participate the Task once during the Task Period. <div class="rule-height"></div>
       8.MyLink Points can only be used via MyLink to the exclusion of other CMHK channels.<div class="rule-height"></div>
       9.MyLink Points shall be invalid after the expiry date as shown on ”My Points” of MyLink. Expired MyLink Points will not be reissued.<div class="rule-height"></div>
@@ -64,7 +64,7 @@ module.exports = {
       11.Entitlement to the MyLink Points and eligibility of customers to participate in this Task shall be determined by CMHK at its sole discretion. <div class="rule-height"></div>
       12.CMHK reserves the right to disqualify any customer from participating in this Task, forfeit his/her entitlement to MyLink Points, cancel the relevant transaction and/or take legal actions against the relevant customer should there be any violation of these Terms and Conditions or illegal, fraudulent or abusive behavior during the participation of this Task.<div class="rule-height"></div>
       13.CMHK shall not be responsible for any matters arising from or in connection with the delay, loss, transmission error of or inability to recognize any information submitted by Eligible Customers due to technical problems, including but not limited to any computer or internet network problems. <div class="rule-height"></div>
-      14.CMHK reserves the right to alter any contents of this Task, terminate this Task, and/or change, amend or modify these Terms and Conditions at any time without prior notice.<br/>
+      14.CMHK reserves the right to alter any contents of this Task, terminate this Task, and/or change, amend or modify these Terms and Conditions at any time without prior notice.<div class="rule-height"></div>
       15.Each Eligible Customer participating in this Task is deemed to have read and agreed to these Terms and Conditions.<div class="rule-height"></div>
       16.In case of any dispute regarding any matter of this Task, CMHK reserves the right to make any final decisions.<div class="rule-height"></div>
       17.Should there be any discrepancy between the English and Chinese versions of these Terms and Conditions, the English version shall apply and prevail.
@@ -80,11 +80,11 @@ module.exports = {
     '规则内容': `
       <div class="title">Terms and Conditions for "Style Usage Enquiry Card" (the "Task") </div><br/>
       1.This Task is organized by China Mobile Hong Kong Company Limited (“CMHK”).<div class="rule-height"></div>
-      2.This Task runs from now to 31 May 2021 at 23:59 p.m. (Hong Kong time) (“Task Period”). <div class="rule-height"></div>
+      2.This Task runs from now to 2 May 2021 at 23:59 p.m. (Hong Kong time) (“Task Period”). <div class="rule-height"></div>
       3.This Task is applicable to MyLink customers (“Eligible Customers”) .<div class="rule-height"></div>
       4.To participate in this Task, Eligible Customers are required to download and log into MyLink.<div class="rule-height"></div>
       5.During the Task Period, Eligible Customers will receive 200 MyLink Points immediately after successful submission of the Task via MyLink Point zone. <div class="rule-height"></div>
-      6.Eligible Customers can enter "MyLink Points"->”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
+      6.Eligible Customers can enter "MyLink Points" -> ”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
       7.Each Eligible Customer may only participate the Task once during the Task Period. <div class="rule-height"></div>
       8.MyLink Points can only be used via MyLink to the exclusion of other CMHK channels.<div class="rule-height"></div>
       9.MyLink Points shall be invalid after the expiry date as shown on ”My Points” of MyLink. Expired MyLink Points will not be reissued.<div class="rule-height"></div>

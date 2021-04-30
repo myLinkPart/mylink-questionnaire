@@ -52,7 +52,7 @@ module.exports = {
     '规则内容': `
       <div class="title">MyLink「Link你的心聲」任務（「本任務」）條款及細則</div><br/>
       1.本任務由中國移動香港有限公司（「中國移動香港」）主辦。<div class="rule-height"></div>
-      2.本任務於即日起至2021年5月31日23:59pm（香港時間）完結（「任務期」）。<div class="rule-height"></div>
+      2.本任務於即日起至2021年5月2日23:59pm（香港時間）完結（「任務期」）。<div class="rule-height"></div>
       3.本任務適用於MyLink用戶(「合資格客戶」)。<div class="rule-height"></div>
       4.合資格客戶須下載及登錄MyLink以參與本任務。<div class="rule-height"></div>
       5.合資格客戶於任務期內成功通過MyLink「我的積分」完成本任務將實時收到500MyLink積分。<div class="rule-height"></div>
@@ -79,7 +79,7 @@ module.exports = {
     '规则内容': `
       <div class="title">MyLink「用量查詢你話事」任務（「本任務」）條款及細則</div><br/>
       1.本任務由中國移動香港有限公司（「中國移動香港」）主辦。<div class="rule-height"></div>
-      2.本任務於即日起至2021年5月31日23:59pm（香港時間）完結（「任務期」）。<div class="rule-height"></div>
+      2.本任務於即日起至2021年5月2日23:59pm（香港時間）完結（「任務期」）。<div class="rule-height"></div>
       3.本任務適用於MyLink用戶(「合資格客戶」)。<div class="rule-height"></div>
       4.合資格客戶須下載及登錄MyLink以參與本任務。<div class="rule-height"></div>
       5.合資格客戶於任務期內成功通過MyLink「我的積分」完成本任務將實時收到200MyLink積分。<div class="rule-height"></div>
