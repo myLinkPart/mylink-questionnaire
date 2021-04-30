@@ -98,6 +98,8 @@ export default {
       if(val.length) {
         let temp = val.filter(item => item !== 'input');
         this.submitParam.content = JSON.stringify(temp);
+        // 如果选项中没有勾选其他，则数据赋值为空
+        if(!val.includes('input')) this.submitParam.other= '';
         this.disabled = false;
       } else {
         this.disabled = true;

@@ -37,6 +37,7 @@
               :label="$t('satisfaction.其他')"
               placeholder=""
               @change="changeOther"
+              @focus="focus"
             />
           </van-checkbox>
         </van-checkbox-group>
@@ -104,10 +105,13 @@ export default {
       this.$emit('selectSub', this.Q2More)
     },
     changeOther() {
-      if(this.custom && !this.custom.includes('input')) {
-        this.Q2More.splice(this.custom.length, 0, 'input');
+      if(this.custom && !this.Q2More.includes('input')) {
+        this.Q2More.splice(this.Q2More.length, 0, 'input');
       }
       this.$emit('changeOther', this.custom)
+    },
+    focus() {
+      this.Q2More.splice(this.Q2More.length, 0, 'input');
     }
   }
 }
