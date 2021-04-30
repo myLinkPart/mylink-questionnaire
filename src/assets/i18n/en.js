@@ -10,6 +10,7 @@ module.exports = {
   '重新填写': 'Please try again.',
   '我的积分': 'MyLink Points',
   '提交': 'Submit',
+  '其他原因': 'Please fill in',
   satisfaction: {
     '头部banner': require('../../../static/img/en/s-banner.png'),
     '题目1': 'How would you rate MyLink app?(Single Choice)*',
@@ -20,14 +21,14 @@ module.exports = {
     '非常满意': 'Very Satisfied',
     '满意_题目2': 'What is the most satisfying part of MyLink?(Single Choice)*',
     '不满意_题目2': 'What is the most unsatisfying part of MyLink?(Single Choice)*',
-    '界面设计': 'User Interface',
-    '用户体验': 'User Experience',
-    '功能服务': 'Function & Serivice',
+    '界面设计': 'User<br/>Interface',
+    '用户体验': 'User<br/>Experience',
+    '功能服务': 'Function &<br/>Service',
     '不满意_多选标题': 'Please select the reason for your dissatisfaction:(Multiple Choice)*',
     '满意_多选标题': 'Please select the reason for your dissatisfaction:(Multiple Choice)*',
     '其他': 'Others (if any)',
     '满意多选项': {
-      '界面': ['MyLink App display inforrmaion clearly，which make the communications service conspicuous and easy to find.',
+      '界面': ['MyLink App display information clearly，which make the communications service conspicuous and easy to find.',
               'Abundant information of  promotions can be simply found in the Jetso section of  MyLink App.',
               'A small red dot is noticeable when MyLink App is trying to let users know new messages or messages about member points.'],
       '体验': ['Online service on MyLink App is convenient. When you redeem the reward points, it provides delivery service. Or you can also take your reward in the Self-pickup cabinet.',
@@ -55,7 +56,7 @@ module.exports = {
       3.This Task is applicable to MyLink customers (“Eligible Customers”) .<div class="rule-height"></div>
       4.To participate in this Task, Eligible Customers are required to download and log into MyLink.<div class="rule-height"></div>
       5.During the Task Period, Eligible Customers will receive 500 MyLink Points immediately after successful submission of the Task via MyLink Point zone. <div class="rule-height"></div>
-      6.Eligible Customers can enter "MyLink Points"”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
+      6.Eligible Customers can enter "MyLink Points"->”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
       7.Each Eligible Customer may only participate the Task once during the Task Period. <div class="rule-height"></div>
       8.MyLink Points can only be used via MyLink to the exclusion of other CMHK channels.<div class="rule-height"></div>
       9.MyLink Points shall be invalid after the expiry date as shown on ”My Points” of MyLink. Expired MyLink Points will not be reissued.<div class="rule-height"></div>
@@ -83,7 +84,7 @@ module.exports = {
       3.This Task is applicable to MyLink customers (“Eligible Customers”) .<div class="rule-height"></div>
       4.To participate in this Task, Eligible Customers are required to download and log into MyLink.<div class="rule-height"></div>
       5.During the Task Period, Eligible Customers will receive 200 MyLink Points immediately after successful submission of the Task via MyLink Point zone. <div class="rule-height"></div>
-      6.Eligible Customers can enter "MyLink Points"”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
+      6.Eligible Customers can enter "MyLink Points"->”My Points” of MyLink to view the redeemed MyLink Points.<div class="rule-height"></div>
       7.Each Eligible Customer may only participate the Task once during the Task Period. <div class="rule-height"></div>
       8.MyLink Points can only be used via MyLink to the exclusion of other CMHK channels.<div class="rule-height"></div>
       9.MyLink Points shall be invalid after the expiry date as shown on ”My Points” of MyLink. Expired MyLink Points will not be reissued.<div class="rule-height"></div>

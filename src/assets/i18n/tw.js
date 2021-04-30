@@ -10,6 +10,7 @@ module.exports = {
   '重新填写': '請重新填寫',
   '我的积分': '我的積分',
   '提交': '提交',
+  '其他原因': '請填寫',
   satisfaction: {
     '头部banner': require('../../../static/img/tw/s-banner.png'),
     '题目1': '請為MyLink的服務打分：（單選）*',
@@ -55,7 +56,7 @@ module.exports = {
       3.本任務適用於MyLink用戶(「合資格客戶」)。<div class="rule-height"></div>
       4.合資格客戶須下載及登錄MyLink以參與本任務。<div class="rule-height"></div>
       5.合資格客戶於任務期內成功通過MyLink「我的積分」完成本任務將實時收到500MyLink積分。<div class="rule-height"></div>
-      6.合資格客戶於MyLink內點選「我的積分」「積分明細」，即可查閱已到賬的積分。<div class="rule-height"></div>
+      6.合資格客戶於MyLink內點選「我的積分」->「積分明細」，即可查閱已到賬的積分。<div class="rule-height"></div>
       7.每位合資格客戶在推廣期內最多只可參與本任務一次。<div class="rule-height"></div>
       8.MyLink積分只可經由MyLink使用，不包括其他中國移動香港渠道。<div class="rule-height"></div>
       9.MyLink積分均有使用期限，逾期未使用自動失效，並不獲補發。<div class="rule-height"></div>
@@ -82,7 +83,7 @@ module.exports = {
       3.本任務適用於MyLink用戶(「合資格客戶」)。<div class="rule-height"></div>
       4.合資格客戶須下載及登錄MyLink以參與本任務。<div class="rule-height"></div>
       5.合資格客戶於任務期內成功通過MyLink「我的積分」完成本任務將實時收到200MyLink積分。<div class="rule-height"></div>
-      6.合資格客戶於MyLink內點選「我的積分」「積分明細」，即可查閱已到賬的積分。<div class="rule-height"></div>
+      6.合資格客戶於MyLink內點選「我的積分」->「積分明細」，即可查閱已到賬的積分。<div class="rule-height"></div>
       7.每位合資格客戶在推廣期內最多只可參與本任務一次。<div class="rule-height"></div>
       8.MyLink積分只可經由MyLink使用，不包括其他中國移動香港渠道。<div class="rule-height"></div>
       9.MyLink積分均有使用期限，逾期未使用自動失效，並不獲補發。<div class="rule-height"></div>

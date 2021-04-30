@@ -10,6 +10,7 @@ module.exports = {
   '重新填写': '请重新填写',
   '我的积分': '我的积分',
   '提交': '提交',
+  '其他原因': '请填写',
   satisfaction: {
     '头部banner': require('../../../static/img/zh/s-banner.png'),
     '题目1': '请为MyLink的服务打分：（单选）*',
@@ -55,7 +56,7 @@ module.exports = {
         3.本任务适用于MyLink用户（「合资格客户」）。<div class="rule-height"></div>
         4.合资格客户须下载及登录MyLink以参与本任务。<div class="rule-height"></div>
         5.合资格客户于任务期内成功通过MyLink「我的积分」完成本任务将实时收到500MyLink积分。<div class="rule-height"></div>
-        6.合资格客户于MyLink内点选「我的积分」「积分明细」，即可查阅已到帐的积分。<div class="rule-height"></div>
+        6.合资格客户于MyLink内点选「我的积分」->「积分明细」，即可查阅已到帐的积分。<div class="rule-height"></div>
         7.每位合资格客户在推广期内最多只可参与本任务一次。<div class="rule-height"></div>
         8.MyLink积分只可经由MyLink使用，不包括其他中国移动香港渠道。<div class="rule-height"></div>
         9.MyLink积分均有使用期限，逾期未使用自动失效，并不获补发。<div class="rule-height"></div>
@@ -82,7 +83,7 @@ module.exports = {
         3.本任务适用于MyLink用户（「合资格客户」）。<div class="rule-height"></div>
         4.合资格客户须下载及登录MyLink以参与本任务。<div class="rule-height"></div>
         5.合资格客户于任务期内成功通过MyLink「我的积分」完成本任务将实时收到200MyLink积分。<div class="rule-height"></div>
-        6.合资格客户于MyLink内点选「我的积分」「积分明细」，即可查阅已到帐的积分。<div class="rule-height"></div>
+        6.合资格客户于MyLink内点选「我的积分」->「积分明细」，即可查阅已到帐的积分。<div class="rule-height"></div>
         7.每位合资格客户在推广期内最多只可参与本任务一次。<div class="rule-height"></div>
         8.MyLink积分只可经由MyLink使用，不包括其他中国移动香港渠道。<div class="rule-height"></div>
         9.MyLink积分均有使用期限，逾期未使用自动失效，并不获补发。<div class="rule-height"></div>

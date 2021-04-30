@@ -16,7 +16,9 @@
           v-for="(item, index) of radioArr"
           :key="index"
           :name="item.value"
-        >{{item.name}}</van-radio>
+        >
+          <span v-html="item.name"></span>
+        </van-radio>
       </van-radio-group>
       <div class="q-other" v-if="Q2">
         <div class="q-title sub-title">{{ subTitle }}</div>
@@ -35,8 +37,8 @@
               v-model="custom"
               name="其他"
               :label="$t('satisfaction.其他')"
-              placeholder=""
-              @change="changeOther"
+              :placeholder="$t('其他原因')"
+              @input="changeOther"
               @focus="focus"
             />
           </van-checkbox>

@@ -54,7 +54,7 @@ export default {
 .q-layout {
   position: relative;
   .q-content {
-    padding: 0 50px * $scale;
+    padding: 0 20px * $scale;
     .q-require {
       margin: 20px * $scale 0;
       font-size: 18px * $scale;
