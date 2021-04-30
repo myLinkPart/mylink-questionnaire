@@ -69,6 +69,7 @@ export default {
     font-size: 20px * $scale;
     color: rgba(0, 0, 0, 0.4);
     margin-top: 20px * $scale;
+    align-items: center;
     span {
       flex: 1;
       text-align: center;

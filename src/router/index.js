@@ -13,7 +13,7 @@ const routes = [
         component: Satisfaction,
         meta: {
             titleZh: "Link你的心声",
-            titleEn: "TBC",
+            titleEn: "Listen to Your Voice",
             titleTw: "Link你的心聲",
         },
     },
@@ -23,7 +23,7 @@ const routes = [
         component: Preference,
         meta: {
             titleZh: "用量查询你话事",
-            titleEn: "TBC",
+            titleEn: "Style Usage Enquiry Card",
             titleTw: "用量查詢你話事",
         },
     },
